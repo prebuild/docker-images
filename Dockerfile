@@ -14,3 +14,4 @@ RUN apt-get -y update && \
   rm -rf /var/lib/apt/lists/*
 
 ENV STRIP ${CROSS_ROOT}/bin/${CROSS_TRIPLE}-strip
+WORKDIR /app
