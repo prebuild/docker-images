@@ -1,6 +1,7 @@
 FROM dockcross/linux-armv7
 
 RUN groupadd --gid 1000 node && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
+RUN groupadd --gid 2000 travis && useradd --uid 2000 --gid travis --shell /bin/bash --create-home travis
 
 RUN apt-get -y update && \
   apt-get -y --no-install-recommends install \
