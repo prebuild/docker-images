@@ -1,6 +1,4 @@
-ARG TARGET
-
-FROM dockcross/${TARGET}
+FROM dockcross/linux-armv7
 
 RUN apt-get -y update && \
   apt-get -y --no-install-recommends install \
@@ -14,4 +12,8 @@ RUN apt-get -y update && \
   rm -rf /var/lib/apt/lists/*
 
 ENV STRIP ${CROSS_ROOT}/bin/${CROSS_TRIPLE}-strip
+ENV ARCH=arm
+ENV ARM_VERSION=7
+ENV TARGET_PLATFORM=linux
+
 WORKDIR /app
