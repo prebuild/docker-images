@@ -1,5 +1,7 @@
 FROM dockcross/linux-armv7
 
+RUN groupadd --gid 1000 node && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
+
 RUN apt-get -y update && \
   apt-get -y --no-install-recommends install \
     git curl gnupg apt-transport-https \
@@ -10,6 +12,8 @@ RUN apt-get -y update && \
   apt-get -y update && \
   apt-get -y install nodejs && \
   rm -rf /var/lib/apt/lists/*
+
+USER node
 
 ENV STRIP ${CROSS_ROOT}/bin/${CROSS_TRIPLE}-strip
 ENV ARCH=arm
