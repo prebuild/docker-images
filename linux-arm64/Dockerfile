@@ -1,0 +1,23 @@
+FROM dockcross/linux-arm64
+
+RUN groupadd --gid 1000 node && useradd --uid 1000 --gid node --shell /bin/bash --create-home node
+
+RUN apt-get -y update && \
+  apt-get -y --no-install-recommends install \
+    git curl gnupg apt-transport-https \
+    && \
+  curl -sSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - && \
+  echo "deb https://deb.nodesource.com/node_10.x buster main" | tee /etc/apt/sources.list.d/nodesource.list && \
+  echo "deb-src https://deb.nodesource.com/node_10.x buster main" | tee -a /etc/apt/sources.list.d/nodesource.list && \
+  apt-get -y update && \
+  apt-get -y install nodejs && \
+  rm -rf /var/lib/apt/lists/*
+
+USER node
+
+ENV STRIP ${CROSS_ROOT}/bin/${CROSS_TRIPLE}-strip
+ENV ARCH=arm64
+ENV ARM_VERSION=8
+ENV TARGET_PLATFORM=linux
+
+WORKDIR /app
