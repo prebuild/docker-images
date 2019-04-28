@@ -16,10 +16,16 @@ RUN apt-get -y update && \
 
 USER node
 
-ENV STRIP ${CROSS_ROOT}/bin/${CROSS_TRIPLE}-strip
-ENV ARCH=arm
-ENV ARM_VERSION=7
-ENV TARGET_PLATFORM=android
+ENV PREBUILD_STRIP_BIN ${CROSS_ROOT}/bin/${CROSS_TRIPLE}-strip
+ENV PREBUILD_ARCH arm
+ENV PREBUILD_ARMV 7
+ENV PREBUILD_PLATFORM android
+
+# TODO: These are for backwards compat. Remove once we have versioning.
+ENV STRIP ${PREBUILD_STRIP_BIN}
+ENV ARCH ${PREBUILD_ARCH}
+ENV ARM_VERSION ${PREBUILD_ARMV}
+ENV TARGET_PLATFORM ${PREBUILD_PLATFORM}
 
 ENV GYP_DEFINES target_arch=arm android_target_arch=arm host_os=linux OS=android
 
