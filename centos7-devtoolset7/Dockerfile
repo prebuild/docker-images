@@ -10,4 +10,4 @@ RUN curl -sL https://rpm.nodesource.com/setup_12.x | bash - && \
 
 USER node
 
-WORKDIR /opt/app-root
+WORKDIR /app
