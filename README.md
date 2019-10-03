@@ -9,6 +9,7 @@
 ### [`prebuild/linux-arm64`](https://hub.docker.com/r/prebuild/linux-arm64)
 ### [`prebuild/linux-armv7`](https://hub.docker.com/r/prebuild/linux-armv7)
 ### [`prebuild/alpine`](https://hub.docker.com/r/prebuild/alpine)
+### [`prebuild/centos7-devtoolset7`](https://hub.docker.com/r/prebuild/centos7-devtoolset7)
 
 ## License
 
