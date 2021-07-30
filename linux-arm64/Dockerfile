@@ -8,10 +8,14 @@ RUN apt-get -y update && \
     git curl gnupg apt-transport-https \
     && \
   curl -sSL https://deb.nodesource.com/gpgkey/nodesource.gpg.key | apt-key add - && \
-  echo "deb https://deb.nodesource.com/node_10.x buster main" | tee /etc/apt/sources.list.d/nodesource.list && \
-  echo "deb-src https://deb.nodesource.com/node_10.x buster main" | tee -a /etc/apt/sources.list.d/nodesource.list && \
+  echo "deb https://deb.nodesource.com/node_10.x bullseye main" | tee /etc/apt/sources.list.d/nodesource.list && \
+  echo "deb-src https://deb.nodesource.com/node_10.x bullseye main" | tee -a /etc/apt/sources.list.d/nodesource.list && \
+  echo Package: nodejs >> /etc/apt/preferences.d/preferences && \
+  echo Pin: origin deb.nodesource.com >> /etc/apt/preferences.d/preferences && \
+  echo Pin-Priority: 1000 >> /etc/apt/preferences.d/preferences && \
   apt-get -y update && \
   apt-get -y install nodejs && \
+  npm -v && \
   rm -rf /var/lib/apt/lists/*
 
 USER node
