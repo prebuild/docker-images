@@ -1,0 +1,38 @@
+name: Release
+on:
+  push:
+    branches: [master]
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+    strategy:
+      matrix:
+        image:
+          - alpine
+          - android-armv7
+          - android-arm64
+          - centos7-devtoolset7
+          - linux-armv6
+          - linux-armv7
+          - linux-arm64
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Login
+        uses: docker/login-action@v1
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Build and push
+        uses: docker/build-push-action@v2
+        with:
+          context: ${{ matrix.image }}
+          tags: |
+            ghcr.io/prebuild/${{ matrix.image }}:latest
+            ghcr.io/prebuild/${{ matrix.image }}:1
+          push: true
