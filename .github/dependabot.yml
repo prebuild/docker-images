@@ -1,0 +1,11 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: monthly
+  # Other base images are unversioned
+  - package-ecosystem: docker
+    directory: /centos7-devtoolset7
+    schedule:
+      interval: monthly
