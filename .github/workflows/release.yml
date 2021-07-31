@@ -1,7 +1,7 @@
 name: Release
 on:
   push:
-    branches: [master]
+    tags: ['v[0-9]+.[0-9]+.[0-9]+']
 jobs:
   build:
     name: Build
@@ -28,11 +28,36 @@ jobs:
           registry: ghcr.io
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Prepare tags
+        run: |
+          echo "MAJOR=$(echo ${GITHUB_REF/refs\/tags\/v/} | awk -F '.' '{print $1}')" >> $GITHUB_ENV
+          echo "MINOR=$(echo ${GITHUB_REF/refs\/tags\/v/} | awk -F '.' '{print $1"."$2}')" >> $GITHUB_ENV
+          echo "PATCH=$(echo ${GITHUB_REF/refs\/tags\/v/} | awk -F '.' '{print $1"."$2"."$3}')" >> $GITHUB_ENV
       - name: Build and push
         uses: docker/build-push-action@v2
         with:
           context: ${{ matrix.image }}
           tags: |
             ghcr.io/prebuild/${{ matrix.image }}:latest
-            ghcr.io/prebuild/${{ matrix.image }}:1
+            ghcr.io/prebuild/${{ matrix.image }}:${{ env.MAJOR }}
+            ghcr.io/prebuild/${{ matrix.image }}:${{ env.MINOR }}
+            ghcr.io/prebuild/${{ matrix.image }}:${{ env.PATCH }}
+          labels: |
+            org.opencontainers.image.version=${{ env.PATCH }}
+            org.opencontainers.image.source=https://github.com/${{ github.repository }}
+            org.opencontainers.image.licenses=GPL-3.0-only
+            org.opencontainers.image.documentation=https://github.com/${{ github.repository }}/releases/tag/v${{ env.PATCH }}
           push: true
+  release:
+    name: Release
+    needs: build
+    permissions:
+      contents: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Create GitHub release
+        uses: docker://antonyurchenko/git-release:v4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

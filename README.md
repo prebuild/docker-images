@@ -2,7 +2,9 @@
 
 **Docker images for cross compiling prebuilt binaries for Node.js. Used by [`prebuildify-cross`](https://github.com/prebuild/prebuildify-cross).**
 
+[![Release](https://img.shields.io/github/v/release/prebuild/docker-images)](https://github.com/prebuild/docker-images/releases/latest)
 [![Release](https://github.com/prebuild/docker-images/actions/workflows/release.yml/badge.svg)](https://github.com/prebuild/docker-images/actions/workflows/release.yml)
+[![Common Changelog](https://common-changelog.org/badge.svg)](https://common-changelog.org)
 
 ## About
 
@@ -13,7 +15,7 @@ All images include `node`, `npm`, `npx` and a build toolchain suitable for `node
 v12.16.0
 ```
 
-Images are tagged with a major version number as well as `latest`. For example, use the following to pin to version 1:
+Images are tagged with a major, minor and full version as well as `latest`. For example, use the following to pin to major version 1:
 
 ```dockerfile
 FROM ghcr.io/prebuild/alpine:1
@@ -73,4 +75,4 @@ Images were previously hosted on Docker Hub. These are no longer updated:
 
 ## License
 
-[GPLv3](LICENSE) © 2019 `prebuild` contributors.
+[GPL-3.0-only](LICENSE) © 2019 `prebuild` contributors.
