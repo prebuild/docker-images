@@ -16,11 +16,12 @@ RUN apt-get -y update && \
   apt-get -y update && \
   apt-get -y install nodejs && \
   npm -v && \
+  test -f ${CROSS_ROOT}/bin/${CROSS_TRIPLE}-strip && \
   rm -rf /var/lib/apt/lists/*
 
 USER node
 
-ENV PREBUILD_STRIP_BIN ${CROSS_ROOT}/bin/strip
+ENV PREBUILD_STRIP_BIN ${CROSS_ROOT}/bin/${CROSS_TRIPLE}-strip
 ENV PREBUILD_ARCH arm
 ENV PREBUILD_ARMV 6
 ENV PREBUILD_PLATFORM linux

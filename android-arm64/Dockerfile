@@ -16,6 +16,7 @@ RUN apt-get -y update && \
   apt-get -y update && \
   apt-get -y install nodejs && \
   npm -v && \
+  test -f ${CROSS_ROOT}/bin/${CROSS_TRIPLE}-strip && \
   rm -rf /var/lib/apt/lists/*
 
 USER node
