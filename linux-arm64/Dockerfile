@@ -29,4 +29,13 @@ ENV ARCH ${PREBUILD_ARCH}
 ENV ARM_VERSION ${PREBUILD_ARMV}
 ENV TARGET_PLATFORM ${PREBUILD_PLATFORM}
 
+# Set inherited dockcross labels to empty values.
+# Labels can't be deleted (https://github.com/moby/moby/issues/3465)
+LABEL org.label-schema.build-date=
+LABEL org.label-schema.name=
+LABEL org.label-schema.schema-version=
+LABEL org.label-schema.vcs-ref=
+LABEL org.label-schema.vcs-url=
+LABEL org.label-schema.version=
+
 WORKDIR /app

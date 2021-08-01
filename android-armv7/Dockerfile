@@ -31,4 +31,13 @@ ENV TARGET_PLATFORM ${PREBUILD_PLATFORM}
 
 ENV GYP_DEFINES target_arch=arm android_target_arch=arm host_os=linux OS=android
 
+# Set inherited dockcross labels to empty values.
+# Labels can't be deleted (https://github.com/moby/moby/issues/3465)
+LABEL org.label-schema.build-date=
+LABEL org.label-schema.name=
+LABEL org.label-schema.schema-version=
+LABEL org.label-schema.vcs-ref=
+LABEL org.label-schema.vcs-url=
+LABEL org.label-schema.version=
+
 WORKDIR /app
