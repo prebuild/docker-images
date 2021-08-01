@@ -44,9 +44,9 @@ jobs:
             ghcr.io/prebuild/${{ matrix.image }}:${{ env.PATCH }}
           labels: |
             org.opencontainers.image.version=${{ env.PATCH }}
-            org.opencontainers.image.source=https://github.com/${{ github.repository }}
+            org.opencontainers.image.source=${{ github.event.repository.html_url }}
+            org.opencontainers.image.revision=${{ github.sha }}
             org.opencontainers.image.licenses=GPL-3.0-only
-            org.opencontainers.image.documentation=https://github.com/${{ github.repository }}/releases/tag/v${{ env.PATCH }}
           push: true
   release:
     name: Release
