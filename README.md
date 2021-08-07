@@ -8,10 +8,10 @@
 
 ## About
 
-All images include `node`, `npm`, `npx` and a preconfigured build toolchain suitable for `node-gyp` and `prebuildify`. For example:
+All images include Node.js LTS, Python 3.x, npm and a preconfigured build toolchain suitable for `node-gyp` and `prebuildify`. For example:
 
 ```
-> docker run --rm -it ghcr.io/prebuild/alpine node -v
+> docker run --rm ghcr.io/prebuild/alpine node -v
 v14.17.4
 ```
 
@@ -24,8 +24,6 @@ FROM ghcr.io/prebuild/alpine:1
 ## Versioning guarantees
 
 Within a major version range, we will not change toolchains, environment variables, working directories, users and more. However, the Node.js version will change without notice. We use Node.js [LTS](https://github.com/nodejs/Release) (at the time of building images) for a light maintenance effort. This is okay because `prebuildify` can target (the headers of) older Node.js versions while itself running on a newer version.
-
-We've yet to align Python versions ([#15](https://github.com/prebuild/docker-images/issues/15)). A next major will use Python 3.
 
 Images that are based on [`dockcross`](https://github.com/dockcross/dockcross) (see below) may inadvertently introduce breaking changes because `dockcross` does not use semantic versions ([dockcross/dockcross#399](https://github.com/dockcross/dockcross/issues/399)) and does not maintain a changelog that would allow us to easily categorize changes and then tag our images accordingly. If this concerns you we recommend pinning to an exact version (`x.x.x`) which we treat as immutable.
 
