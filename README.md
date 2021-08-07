@@ -81,6 +81,27 @@ Images were previously hosted on Docker Hub. These are no longer updated:
 - [`android-armv7`](https://hub.docker.com/r/prebuild/android-armv7)
 - [`android-arm64`](https://hub.docker.com/r/prebuild/android-arm64)
 
+## Development
+
+### Releasing
+
+Update [`CHANGELOG.md`](CHANGELOG.md) according to [Common Changelog](https://common-changelog), for which you might like [`hallmark`](https://github.com/vweevers/hallmark) to pull commit messages into the changelog:
+
+```
+hallmark bump minor
+```
+
+Tweak `CHANGELOG.md` as needed until `hallmark lint` is happy. Then commit, tag and push. For example:
+
+```
+git add CHANGELOG.md
+git commit -m "2.1.0"
+git tag -a v2.1.0 -m v2.1.0
+git push --follow-tags
+```
+
+The git tag triggers [CI/CD](https://github.com/prebuild/docker-images/actions) to publish new images to [GHCR](https://github.com/orgs/prebuild/packages?ecosystem=container). A changelog entry is required.
+
 ## License
 
 [GPL-3.0-only](LICENSE) © 2019 `prebuild` contributors.
