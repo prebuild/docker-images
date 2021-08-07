@@ -1,0 +1,38 @@
+name: Test
+on: workflow_dispatch
+concurrency:
+  group: test
+  cancel-in-progress: true
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    strategy:
+      matrix:
+        image:
+          - alpine
+          - android-armv7
+          - android-arm64
+          - centos7-devtoolset7
+          - linux-armv6
+          - linux-armv7
+          - linux-arm64
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Build
+        uses: docker/build-push-action@v2
+        with:
+          context: ${{ matrix.image }}
+          tags: |
+            prebuild/${{ matrix.image }}:dev
+          push: false
+      - name: Test
+        run: |
+          docker run --rm prebuild/${{ matrix.image }}:dev node -v
+          docker run --rm prebuild/${{ matrix.image }}:dev npm -v
+          docker run --rm prebuild/${{ matrix.image }}:dev python --version
+          docker run --rm prebuild/${{ matrix.image }}:dev npm ls node-gyp -g
+          docker run --rm prebuild/${{ matrix.image }}:dev env
