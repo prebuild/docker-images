@@ -10,4 +10,7 @@ RUN groupadd -g 1000 node && useradd -g 1000 -u 1000 -m node && \
 
 USER node
 
+# Disable npm update check
+ENV NO_UPDATE_NOTIFIER true
+
 WORKDIR /app

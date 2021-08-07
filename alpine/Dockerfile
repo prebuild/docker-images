@@ -5,4 +5,8 @@ RUN addgroup -g 2000 travis && \
   apk --no-cache add g++ gcc libgcc libstdc++ linux-headers make python git
 
 USER node
+
+# Disable npm update check
+ENV NO_UPDATE_NOTIFIER true
+
 WORKDIR /app

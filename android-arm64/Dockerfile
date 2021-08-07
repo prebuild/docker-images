@@ -28,6 +28,9 @@ ENV TARGET_PLATFORM ${PREBUILD_PLATFORM}
 
 ENV GYP_DEFINES target_arch=arm64 android_target_arch=arm64 host_os=linux OS=android
 
+# Disable npm update check
+ENV NO_UPDATE_NOTIFIER true
+
 # Set inherited dockcross labels to empty values.
 # Labels can't be deleted (https://github.com/moby/moby/issues/3465)
 LABEL org.label-schema.build-date=
