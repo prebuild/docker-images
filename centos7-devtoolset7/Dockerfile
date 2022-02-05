@@ -7,6 +7,8 @@ RUN groupadd -g 1000 node && useradd -g 1000 -u 1000 -m node && \
   curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash - && \
   yum install -y make nodejs && \
   npm -v
+  yum install -y python3 && \
+  python3 --version
 
 USER node
 
