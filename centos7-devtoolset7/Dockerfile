@@ -17,5 +17,6 @@ USER node
 
 # Disable npm update check
 ENV NO_UPDATE_NOTIFIER true
+ENV npm_config_update_notifier false
 
 WORKDIR /app
