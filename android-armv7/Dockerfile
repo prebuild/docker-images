@@ -10,12 +10,12 @@ RUN groupadd --gid 1000 node && useradd --uid 1000 --gid node --shell /bin/bash 
   curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - && \
   apt-get -y install nodejs && \
   npm -v && \
-  test -f ${CROSS_ROOT}/bin/${CROSS_TRIPLE}-strip && \
+  test -f ${CROSS_ROOT}/bin/llvm-strip && \
   rm -rf /var/lib/apt/lists/*
 
 USER node
 
-ENV PREBUILD_STRIP_BIN ${CROSS_ROOT}/bin/${CROSS_TRIPLE}-strip
+ENV PREBUILD_STRIP_BIN ${CROSS_ROOT}/bin/llvm-strip
 ENV PREBUILD_ARCH arm
 ENV PREBUILD_ARMV 7
 ENV PREBUILD_PLATFORM android
