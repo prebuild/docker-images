@@ -14,6 +14,7 @@ RUN groupadd --gid 1000 node && useradd --uid 1000 --gid node --shell /bin/bash 
   rm -rf /var/lib/apt/lists/*
 
 USER node
+ENV HOME /home/node
 
 ENV PREBUILD_STRIP_BIN ${CROSS_ROOT}/bin/llvm-strip
 ENV PREBUILD_ARCH arm64
