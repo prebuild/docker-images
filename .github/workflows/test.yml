@@ -10,6 +10,7 @@ jobs:
     permissions:
       contents: read
     strategy:
+      fail-fast: false
       matrix:
         image:
           - alpine
@@ -31,8 +32,10 @@ jobs:
           push: false
       - name: Test
         run: |
+          docker run --rm prebuild/${{ matrix.image }}:dev whoami
           docker run --rm prebuild/${{ matrix.image }}:dev node -v
           docker run --rm prebuild/${{ matrix.image }}:dev npm -v
+          docker run --rm prebuild/${{ matrix.image }}:dev npx -v
           docker run --rm prebuild/${{ matrix.image }}:dev python --version
           docker run --rm prebuild/${{ matrix.image }}:dev npm ls node-gyp -g
           docker run --rm prebuild/${{ matrix.image }}:dev env

@@ -7,6 +7,7 @@ RUN addgroup -g 2000 travis && \
   python --version
 
 USER node
+ENV HOME /home/node
 
 # Disable npm update check
 ENV NO_UPDATE_NOTIFIER true

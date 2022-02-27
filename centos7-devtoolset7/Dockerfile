@@ -14,6 +14,7 @@ RUN groupadd -g 1000 node && useradd -g 1000 -u 1000 -m node && \
   python --version
 
 USER node
+ENV HOME /home/node
 
 # Disable npm update check
 ENV NO_UPDATE_NOTIFIER true
