@@ -30,12 +30,16 @@ jobs:
           tags: |
             prebuild/${{ matrix.image }}:dev
           push: false
-      - name: Test
+      - name: Print versions
         run: |
-          docker run --rm prebuild/${{ matrix.image }}:dev whoami
           docker run --rm prebuild/${{ matrix.image }}:dev node -v
           docker run --rm prebuild/${{ matrix.image }}:dev npm -v
           docker run --rm prebuild/${{ matrix.image }}:dev npx -v
           docker run --rm prebuild/${{ matrix.image }}:dev python --version
           docker run --rm prebuild/${{ matrix.image }}:dev npm ls node-gyp -g
-          docker run --rm prebuild/${{ matrix.image }}:dev env
+      - name: Print env
+        run: docker run --rm prebuild/${{ matrix.image }}:dev env
+
+      # TODO: fix WORKDIR and permissions (#10)
+      # - name: Test node-gyp
+      #   run: docker run --rm -v $(pwd)/test/native-addon:/home/node/app:z -w /home/node/app prebuild/${{ matrix.image }}:dev npm run install
