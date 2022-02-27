@@ -28,6 +28,7 @@ ENV TARGET_PLATFORM ${PREBUILD_PLATFORM}
 
 # Disable npm update check
 ENV NO_UPDATE_NOTIFIER true
+ENV npm_config_update_notifier false
 
 # Set inherited dockcross labels to empty values.
 # Labels can't be deleted (https://github.com/moby/moby/issues/3465)
