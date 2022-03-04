@@ -1,5 +1,17 @@
 # Changelog
 
+## [2.0.0] - 2022-03-04
+
+### Changed
+
+- **Breaking:** bump Python from 2.x to 3.x ([`4926f87`](https://github.com/prebuild/docker-images/commit/4926f87))
+
+### Fixed
+
+- Fix `HOME` to be `/home/node` in all images ([`1061de7`](https://github.com/prebuild/docker-images/commit/1061de7))
+- Disable npm update check ([`e44b75c`](https://github.com/prebuild/docker-images/commit/e44b75c), [`b0c8df4`](https://github.com/prebuild/docker-images/commit/b0c8df4))
+- Fix `strip` location in android images ([`a19a787`](https://github.com/prebuild/docker-images/commit/a19a787)).
+
 ## [1.0.1] - 2021-08-01
 
 ### Fixed
@@ -12,6 +24,8 @@
 ## [1.0.0] - 2021-07-31
 
 _First (versioned) release._
+
+[2.0.0]: https://github.com/prebuild/docker-images/releases/tag/v2.0.0
 
 [1.0.1]: https://github.com/prebuild/docker-images/releases/tag/v1.0.1
 
