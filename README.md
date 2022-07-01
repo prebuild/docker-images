@@ -59,6 +59,14 @@ Cross-compile for Linux ARM. This image thinly wraps a [`dockcross`](https://git
 
 Cross-compile for Linux ARM. This image thinly wraps a [`dockcross`](https://github.com/dockcross/dockcross) image. Preconfigures `prebuildify` to [tag](https://github.com/prebuild/prebuildify#options) prebuilds with the armv version (8).
 
+### [`linux-arm64-lts`](https://github.com/orgs/prebuild/packages/container/package/linux-arm64-lts)
+
+Cross-compile for Linux ARM. This image uses an old version of glibc (glibc 2.27) for compatibility. This image thinly wraps a [`dockcross`](https://github.com/dockcross/dockcross) image. Preconfigures `prebuildify` to [tag](https://github.com/prebuild/prebuildify#options) prebuilds with the armv version (8).
+
+### [`linux-arm64-musl`](https://github.com/orgs/prebuild/packages/container/package/linux-arm64-musl)
+
+Cross-compile for Linux ARM. This image uses musl instead of glibc for Alpine linux. This image thinly wraps a [`dockcross`](https://github.com/dockcross/dockcross) image. Preconfigures `prebuildify` to [tag](https://github.com/prebuild/prebuildify#options) prebuilds with the armv version (8).
+
 ### [`android-armv7`](https://github.com/orgs/prebuild/packages/container/package/android-armv7)
 
 Cross-compile for Android ARM. This image thinly wraps a [`dockcross`](https://github.com/dockcross/dockcross) image. Preconfigures `prebuildify` to [tag](https://github.com/prebuild/prebuildify#options) prebuilds with the armv version (7).

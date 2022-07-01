@@ -19,6 +19,8 @@ jobs:
           - linux-armv6
           - linux-armv7
           - linux-arm64
+          - linux-arm64-lts
+          - linux-arm64-musl
     steps:
       - name: Checkout
         uses: actions/checkout@v3
