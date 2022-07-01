@@ -12,7 +12,7 @@ All images include Node.js LTS, Python 3.x, npm and a preconfigured build toolch
 
 ```
 > docker run --rm ghcr.io/prebuild/alpine node -v
-v16.14.0
+v16.15.1
 ```
 
 Images are tagged with a major, minor and full version as well as `latest`. For example, use the following to pin to major version 2:

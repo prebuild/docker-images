@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.1.0] - 2022-07-01
+
+### Added
+
+- Add linux-arm64-lts and linux-arm64-musl images ([#27](https://github.com/prebuild/docker-images/issues/27)) ([`901f570`](https://github.com/prebuild/docker-images/commit/901f570)) (DanSnow)
+
 ## [2.0.0] - 2022-03-04
 
 ### Changed
@@ -24,6 +30,8 @@
 ## [1.0.0] - 2021-07-31
 
 _First (versioned) release._
+
+[2.1.0]: https://github.com/prebuild/docker-images/releases/tag/v2.1.0
 
 [2.0.0]: https://github.com/prebuild/docker-images/releases/tag/v2.0.0
 
