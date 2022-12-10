@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.1] - 2022-12-10
+
+### Fixed
+
+- Fix `python` in `urlgrabber-ext-down` ([#29](https://github.com/prebuild/docker-images/issues/29)) ([`61db648`](https://github.com/prebuild/docker-images/commit/61db648)) (Rob Moran)
+- Pin Node.js to 16 in `centos7-devtoolset7` ([`e32dae9`](https://github.com/prebuild/docker-images/commit/e32dae9)) (Vincent Weevers).
+
 ## [2.1.0] - 2022-07-01
 
 ### Added
@@ -30,6 +37,8 @@
 ## [1.0.0] - 2021-07-31
 
 _First (versioned) release._
+
+[2.1.1]: https://github.com/prebuild/docker-images/releases/tag/v2.1.1
 
 [2.1.0]: https://github.com/prebuild/docker-images/releases/tag/v2.1.0
 
