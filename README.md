@@ -55,7 +55,7 @@ Cross-compile for Linux ARM. This image thinly wraps a [`dockcross`](https://git
 
 Cross-compile for Linux ARM. This image thinly wraps a [`dockcross`](https://github.com/dockcross/dockcross) image. Preconfigures `prebuildify` to [tag](https://github.com/prebuild/prebuildify#options) prebuilds with the armv version (7).
 
-### [`linux-armv7-musl`](https://github.com/orgs/prebuild/packages/container/package/linux-armv7-musl)
+### [`linux-armv7l-musl`](https://github.com/orgs/prebuild/packages/container/package/linux-armv7l-musl)
 
 Cross-compile for Linux ARM. This image uses musl instead of glibc for Alpine linux. This image thinly wraps a [`dockcross`](https://github.com/dockcross/dockcross) image. Preconfigures `prebuildify` to [tag](https://github.com/prebuild/prebuildify#options) prebuilds with the armv version (7).
 
