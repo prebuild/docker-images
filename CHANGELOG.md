@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.2.0] - 2024-02-02
+
+### Added
+
+- Add `linux-armv7l-musl` image ([#31](https://github.com/prebuild/docker-images/issues/31)) ([`4696dd2`](https://github.com/prebuild/docker-images/commit/4696dd2)) (Alejandro Ojeda Gutiérrez)
+
 ## [2.1.1] - 2022-12-10
 
 ### Fixed
@@ -37,6 +43,8 @@
 ## [1.0.0] - 2021-07-31
 
 _First (versioned) release._
+
+[2.2.0]: https://github.com/prebuild/docker-images/releases/tag/v2.2.0
 
 [2.1.1]: https://github.com/prebuild/docker-images/releases/tag/v2.1.1
 
