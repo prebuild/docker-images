@@ -19,6 +19,7 @@ jobs:
           - centos7-devtoolset7
           - linux-armv6
           - linux-armv7
+          - linux-armv7l-musl
           - linux-arm64
           - linux-arm64-lts
           - linux-arm64-musl
