@@ -12,16 +12,16 @@ jobs:
     strategy:
       matrix:
         image:
-          - alpine
-          - android-armv7
-          - android-arm64
+          # - alpine
+          # - android-armv7
+          # - android-arm64
           - centos7-devtoolset7
-          - linux-armv6
-          - linux-armv7
-          - linux-armv7l-musl
-          - linux-arm64
-          - linux-arm64-lts
-          - linux-arm64-musl
+          # - linux-armv6
+          # - linux-armv7
+          # - linux-armv7l-musl
+          # - linux-arm64
+          # - linux-arm64-lts
+          # - linux-arm64-musl
     steps:
       - name: Checkout
         uses: actions/checkout@v4
