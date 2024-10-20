@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.3.1] - 2024-10-21
+
+### Fixed
+
+- Replace python3 symlink in `almalinux-devtoolset11` image ([#39](https://github.com/prebuild/docker-images/issues/39)) ([`5916c8f`](https://github.com/prebuild/docker-images/commit/5916c8f)) (Vincent Weevers)
+
 ## [2.3.0] - 2024-10-21
 
 ### Added
@@ -49,6 +55,8 @@
 ## [1.0.0] - 2021-07-31
 
 _First (versioned) release._
+
+[2.3.1]: https://github.com/prebuild/docker-images/releases/tag/v2.3.1
 
 [2.3.0]: https://github.com/prebuild/docker-images/releases/tag/v2.3.0
 
