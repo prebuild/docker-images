@@ -6,6 +6,7 @@ USER 0
 RUN curl -fsSL https://rpm.nodesource.com/setup_18.x | bash - && \
   microdnf install -y shadow-utils make nodejs python3.11 gcc-toolset-11 && \
   ln -s python3.11 /usr/bin/python && \
+  ln -sf python3.11 /usr/bin/python3 && \
   microdnf clean all && \
   rm -rf /var/cache/yum && \
   groupadd -g 1000 node && useradd -g 1000 -u 1000 -m node && \
