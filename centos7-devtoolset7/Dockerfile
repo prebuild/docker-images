@@ -5,6 +5,8 @@ USER 0
 # Using Node.js 16 here instead of LTS because >= 18 doesn't support CentOS 7. See:
 # - https://nodejs.org/en/blog/announcements/v18-release-announce/#toolchain-and-compiler-upgrades
 # - https://github.com/prebuild/prebuildify-cross/issues/13
+#
+# Can no longer be built: mirrorlist.centos.org is offline.
 RUN groupadd -g 1000 node && useradd -g 1000 -u 1000 -m node && \
   groupadd -g 2000 travis && useradd -g 2000 -u 2000 -m travis && \
   curl -fsSL https://rpm.nodesource.com/setup_16.x | bash - && \
