@@ -106,7 +106,7 @@ Images were previously hosted on Docker Hub. These are no longer updated:
 Update [`CHANGELOG.md`](CHANGELOG.md) according to [Common Changelog](https://common-changelog), for which you might like [`hallmark`](https://github.com/vweevers/hallmark) to pull commit messages into the changelog:
 
 ```
-hallmark bump minor
+hallmark cc add minor
 ```
 
 Tweak `CHANGELOG.md` as needed until `hallmark lint` is happy. Then commit, tag and push. For example:

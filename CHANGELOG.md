@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.3.0] - 2024-10-21
+
+### Added
+
+- Add `almalinux-devtoolset11` image ([#38](https://github.com/prebuild/docker-images/issues/38)) ([`7754d8b`](https://github.com/prebuild/docker-images/commit/7754d8b)) (Vincent Weevers)
+
 ## [2.2.0] - 2024-02-02
 
 ### Added
@@ -43,6 +49,8 @@
 ## [1.0.0] - 2021-07-31
 
 _First (versioned) release._
+
+[2.3.0]: https://github.com/prebuild/docker-images/releases/tag/v2.3.0
 
 [2.2.0]: https://github.com/prebuild/docker-images/releases/tag/v2.2.0
 
