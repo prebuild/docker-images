@@ -4,8 +4,8 @@ USER 0
 
 # Need shadow-utils for groupadd and useradd
 RUN curl -fsSL https://rpm.nodesource.com/setup_18.x | bash - && \
-  microdnf install -y shadow-utils make nodejs python3 gcc-toolset-11 && \
-  ln -s python3 /usr/bin/python && \
+  microdnf install -y shadow-utils make nodejs python3.11 gcc-toolset-11 && \
+  ln -s python3.11 /usr/bin/python && \
   microdnf clean all && \
   rm -rf /var/cache/yum && \
   groupadd -g 1000 node && useradd -g 1000 -u 1000 -m node && \
