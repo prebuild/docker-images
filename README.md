@@ -29,13 +29,21 @@ Images that are based on [`dockcross`](https://github.com/dockcross/dockcross) (
 
 ## Images
 
+### [`almalinux-devtoolset11`](https://github.com/orgs/prebuild/packages/container/package/almalinux-devtoolset11)
+
+Compile in AlmaLinux 8 with Red Hat Developer Toolset 11. This increases compatibility with Linux flavors because prebuilds will be compiled with GCC 11 but at runtime they will only require glibc 2.28. For comparison, compiling on Ubuntu 24.04 would require glibc 2.35.
+
+Node.js binaries are built with a similar approach but the Node.js project uses RHEL 8 (which requires a Red Hat subscription) instead of AlmaLinux.
+
+Preconfigures `prebuildify` to [tag](https://github.com/prebuild/prebuildify#options) prebuilds with the libc flavor, to set them apart from musl prebuilds, e.g. `linux-x64/node.glibc.node`.
+
 ### [`centos7-devtoolset7`](https://github.com/orgs/prebuild/packages/container/package/centos7-devtoolset7)
 
-Compile in CentOS 7, as a better alternative to (commonly) Ubuntu 16.04 on Travis or GitHub Actions. Makes prebuilds compatible with Debian 8, Ubuntu 14.04, RHEL 7, CentOS 7 and other Linux flavors with an old glibc.
+_This image is not updated anymore and does not support Node.js 18 and C++ 20. Instead use `almalinux-devtoolset11`._
 
-> The neat thing about this is that you get to compile with gcc 7 but glibc 2.17, so binaries are compatible for \[among others] Ubuntu 14.04 and Debian 8.
->
-> The RHEL folks put in a ton of work to make the devtoolsets work on their older base systems (libc mainly), which involves shipping a delta library that contains the new stuff that can be statically linked in where it's used. We use this method for building Node binary releases.
+Compile in CentOS 7 with Red Hat Developer Toolset 7. This increases compatibility with Linux flavors because prebuilds will be compiled with GCC 7 but at runtime they will only require glibc 2.17. Makes prebuilds compatible with Debian 8, Ubuntu 14.04, RHEL 7, CentOS 7 and other Linux flavors with an old glibc.
+
+> The RHEL folks put in a ton of work to make the devtoolsets work on their older base systems (libc mainly), which involves shipping a delta library that contains the new stuff that can be statically linked in where it's used.
 >
 > \-- <cite>[**@rvagg**](https://github.com/rvagg) ([prebuild/docker-images#8](https://github.com/prebuild/docker-images/pull/8))</cite>
 
