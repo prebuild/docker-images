@@ -20,6 +20,7 @@ ENV PREBUILD_STRIP_BIN ${CROSS_ROOT}/bin/${CROSS_TRIPLE}-strip
 ENV PREBUILD_ARCH arm64
 ENV PREBUILD_ARMV 8
 ENV PREBUILD_PLATFORM linux
+ENV PREBUILD_LIBC musl
 
 # TODO: These are for backwards compat. Remove once we have versioning.
 ENV STRIP ${PREBUILD_STRIP_BIN}
