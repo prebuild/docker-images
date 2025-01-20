@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.3.2] - 2025-01-20
+
+### Fixed
+
+- Force prebuildify to recognize musl libc ([#42](https://github.com/prebuild/docker-images/issues/42)) ([`c302cef`](https://github.com/prebuild/docker-images/commit/c302cef)) (Rouven Weßling)
+
 ## [2.3.1] - 2024-10-21
 
 ### Fixed
@@ -55,6 +61,8 @@
 ## [1.0.0] - 2021-07-31
 
 _First (versioned) release._
+
+[2.3.2]: https://github.com/prebuild/docker-images/releases/tag/v2.3.2
 
 [2.3.1]: https://github.com/prebuild/docker-images/releases/tag/v2.3.1
 
