@@ -1,5 +1,11 @@
 # Changelog
 
+## [2.4.0] - 2025-01-21
+
+### Added
+
+- Add git to almalinux container ([#43](https://github.com/prebuild/docker-images/issues/43)) ([`4b27295`](https://github.com/prebuild/docker-images/commit/4b27295)) (Rouven Weßling)
+
 ## [2.3.2] - 2025-01-20
 
 ### Fixed
@@ -61,6 +67,8 @@
 ## [1.0.0] - 2021-07-31
 
 _First (versioned) release._
+
+[2.4.0]: https://github.com/prebuild/docker-images/releases/tag/v2.4.0
 
 [2.3.2]: https://github.com/prebuild/docker-images/releases/tag/v2.3.2
 
