@@ -17,7 +17,6 @@ RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - && \
   npm -v && \
   rm -rf /var/lib/apt/lists/*
 
-# We don't have dockcross variables, so emulate them here:
 ENV PREBUILD_STRIP_BIN=/usr/bin/strip
 ENV PREBUILD_ARCH=s390x
 ENV PREBUILD_PLATFORM=linux
