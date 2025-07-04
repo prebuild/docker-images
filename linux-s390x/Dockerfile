@@ -17,7 +17,9 @@ RUN curl -fsSL https://deb.nodesource.com/setup_lts.x | bash - && \
   npm -v && \
   rm -rf /var/lib/apt/lists/*
 
-ENV PREBUILD_STRIP_BIN=/usr/bin/strip
+USER node
+ENV HOME=/home/node
+
 ENV PREBUILD_ARCH=s390x
 ENV PREBUILD_PLATFORM=linux
 
@@ -38,6 +40,4 @@ LABEL org.label-schema.vcs-ref=
 LABEL org.label-schema.vcs-url=
 LABEL org.label-schema.version=
 
-USER node
-ENV HOME=/home/node
 WORKDIR /app
