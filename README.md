@@ -79,7 +79,7 @@ Cross-compile for Linux ARM. This image uses an old version of glibc (glibc 2.27
 
 Cross-compile for Linux ARM. This image uses musl instead of glibc for Alpine linux. This image thinly wraps a [`dockcross`](https://github.com/dockcross/dockcross) image. Preconfigures `prebuildify` to [tag](https://github.com/prebuild/prebuildify#options) prebuilds with the armv version (8).
 
-### [`linux-s390x`](https://github.com/orgs/prebuild/packages/container/package/linux-armv6)
+### [`linux-s390x`](https://github.com/orgs/prebuild/packages/container/package/linux-s390x)
 
 Cross-compile for Linux s390x. This image thinly wraps a [`dockcross`](https://github.com/dockcross/dockcross) image. Preconfigures `prebuildify` to [tag](https://github.com/prebuild/prebuildify#options) prebuilds with the s390x architecture.
 
