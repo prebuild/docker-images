@@ -3,7 +3,7 @@ FROM almalinux:8-minimal
 USER 0
 
 # Need shadow-utils for groupadd and useradd
-RUN curl -fsSL https://rpm.nodesource.com/setup_18.x | bash - && \
+RUN curl -fsSL https://rpm.nodesource.com/setup_lts.x | bash - && \
   microdnf install -y shadow-utils make nodejs python3.11 gcc-toolset-11 git && \
   ln -s python3.11 /usr/bin/python && \
   ln -sf python3.11 /usr/bin/python3 && \
