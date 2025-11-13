@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.5.0] - 2025-11-13
+
+### Changed
+
+- Bump Node.js to LTS in almalinux-devtoolset11 ([`e4972a7`](https://github.com/prebuild/docker-images/commit/e4972a7)) (Vincent Weevers)
+
+### Added
+
+- Add Linux s390x Dockerfile ([`1fa1670`](https://github.com/prebuild/docker-images/commit/1fa1670), [`d71f97e`](https://github.com/prebuild/docker-images/commit/d71f97e)) (Abhilash)
+
 ## [2.4.0] - 2025-01-21
 
 ### Added
@@ -67,6 +77,8 @@
 ## [1.0.0] - 2021-07-31
 
 _First (versioned) release._
+
+[2.5.0]: https://github.com/prebuild/docker-images/releases/tag/v2.5.0
 
 [2.4.0]: https://github.com/prebuild/docker-images/releases/tag/v2.4.0
 
