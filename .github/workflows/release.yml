@@ -25,7 +25,7 @@ jobs:
           - linux-s390x
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Login
         uses: docker/login-action@v3
         with:
@@ -60,7 +60,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
       - name: Create GitHub release
         uses: docker://antonyurchenko/git-release:v4
         env:
